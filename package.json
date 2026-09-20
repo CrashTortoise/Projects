@@ -1,0 +1,16 @@
+{
+  "name": "project-tab",
+  "version": "1.1.0",
+  "description": "Project TAB — Test a Breach: a self-hosted cyber tabletop exercise platform.",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check server.js && node --check src/app.js && node --check src/database.js && node --check src/auth.js && node --check src/report.js && node --check public/app.js"
+  },
+  "license": "MIT"
+}

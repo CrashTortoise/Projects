@@ -1,0 +1,7 @@
+.git
+data/*.db*
+tests
+*.log
+.env
+Project-TAB-*.zip
+

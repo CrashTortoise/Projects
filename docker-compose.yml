@@ -1,0 +1,22 @@
+services:
+  project-tab:
+    build: .
+    container_name: project-tab
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8080
+      TAB_DB_PATH: /app/data/project-tab.db
+      TAB_ADMIN_USERNAME: ${TAB_ADMIN_USERNAME:-admin}
+      TAB_ADMIN_PASSWORD: ${TAB_ADMIN_PASSWORD:?Set TAB_ADMIN_PASSWORD in .env before starting Project TAB}
+      TAB_ADMIN_NAME: ${TAB_ADMIN_NAME:-TAB Administrator}
+      TAB_SESSION_HOURS: ${TAB_SESSION_HOURS:-12}
+      TAB_SECURE_COOKIES: ${TAB_SECURE_COOKIES:-false}
+      TAB_TRUST_PROXY: ${TAB_TRUST_PROXY:-false}
+    volumes:
+      - project-tab-data:/app/data
+
+volumes:
+  project-tab-data:
